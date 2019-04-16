@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IS19-robustness Audio Samples</title>
+    </head>
+
+    <body>
+            <h1>Audio Samples for the Interspeech 2019 submission: Investigating the robustness of sequence-to-sequence
+        text-to-speech models to imperfectly-transcribed training data</h1>
+    
+            <b>Authors:</b> Jason Fong, Pilar Oplustil Gallegos, Zack Hodari, Simon King<br>
+            <b>Abstract:</b> Sequence-to-sequence (S2S) text-to-speech (TTS) models can synthesise high quality speech when large amounts of
+            annotated training data are available. Transcription errors exist in all data and are especially prevalent in found data
+            such as audiobooks. In previous generations of TTS technology, alignment using Hidden Markov Models (HMMs) was widely
+            used to identify and eliminate bad data. In S2S models, the use of attention replaces HMM-based alignment, and there is
+            no explicit mechanism for removing bad data. It is not yet understood how such models deal with transcription errors in
+            the training data. <br>
+            
+            We evaluate the quality of speech from S2S-TTS models when trained on data with imperfect transcripts, simulated using
+            corruption, or provided by an Automatic Speech Recogniser (ASR). We find that attention can skip over extraneous words
+            in the input sequence, providing robustness to insertion errors. But substitutions and deletions pose a problem because
+            there is no ground truth input available to align to the ground truth acoustics during teacher-forced training. We
+            conclude that S2S-TTS systems are only partially robust to training on imperfectly-transcribed data and further work is
+            needed.
+        
+            <h2>Samples from Figure 3</h2>
+
+            <b>clean-100 ~ input text:</b> "In being comparatively modern."</br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/figure3/g_100clean.wav">
+            </audio>
+            <br>            
+
+            <b>ADD ~ input text:</b> "In being region comparatively sailed modern."</br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/figure3/g_50clean_50add5words.wav">
+            </audio>
+            <br>            
+
+            <b>ASR ~ input text:</b> "Indie comparatively modeled."</br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/figure3/g_50clean_50asr34.8wer.wav">
+            </audio>
+            <br>            
+
+            <b>DEL ~ input text:</b> "Being modern."</br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/figure3/g_50clean_50del5words.wav">
+            </audio>
+            <br>            
+
+            <b>REPL ~ input text:</b> "Eg being strengthening modern."</br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/figure3/g_50clean_50sub5words.wav">
+            </audio>
+            <br>            
+    
+            <h2>Samples from listening test</h2>
+
+            <h3>
+                <b>LJ-050-0009:</b>
+                <i>"Disclosed by the Commission's investigation. Other measures should be taken as well to improve the overall
+                    operation of
+                    the Secret Service."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0009.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0009.wav">
+            </audio>
+            <br>
+            
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0009.wav">
+            </audio>
+            <br>
+            
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0009.wav">
+            </audio>
+            <br>
+            
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0009.wav">
+            </audio>
+            <br>
+            
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0009.wav">
+            </audio>
+            <br>
+            
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0009.wav">
+            </audio>
+            <br>
+
+            <h3>
+                <b>LJ-050-0020:</b>
+                <i>"In which the Commission believes that the Secret Service has operated with insufficient planning or control."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0020.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0020.wav">
+            </audio>
+            <br>
+            
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0020.wav">
+            </audio>
+            <br>
+            
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0020.wav">
+            </audio>
+            <br>
+            
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0020.wav">
+            </audio>
+            <br>
+            
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0020.wav">
+            </audio>
+            <br>
+            
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0020.wav">
+            </audio>
+            <br>
+
+            <h3>
+            <b>LJ-050-0028:</b> 
+            <i>"No sizable organization can achieve efficiency without the careful analysis and demarcation of
+                responsibility."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0028.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0028.wav">
+            </audio>
+            <br>
+
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0028.wav">
+            </audio>
+            <br>
+
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0028.wav">
+            </audio>
+            <br>
+
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0028.wav">
+            </audio>
+            <br>
+
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0028.wav">
+            </audio>
+            <br>
+
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0028.wav">
+            </audio>
+            <br>
+
+            <h3>
+                <b>LJ-050-0072:</b>
+                <i>"That referrals to the Secret Service under the new criteria might, if not properly handled."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0072.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0072.wav">
+            </audio>
+            <br>
+            
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0072.wav">
+            </audio>
+            <br>
+            
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0072.wav">
+            </audio>
+            <br>
+            
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0072.wav">
+            </audio>
+            <br>
+            
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0072.wav">
+            </audio>
+            <br>
+            
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0072.wav">
+            </audio>
+            <br>
+
+            <h3>
+                <b>LJ-050-0121:</b>
+                <i>"Detailed formal agreements embodying these arrangements should be worked out between the Secret Service and both of
+                these agencies."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0121.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0121.wav">
+            </audio>
+            <br>
+            
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0121.wav">
+            </audio>
+            <br>
+            
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0121.wav">
+            </audio>
+            <br>
+            
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0121.wav">
+            </audio>
+            <br>
+            
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0121.wav">
+            </audio>
+            <br>
+            
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0121.wav">
+            </audio>
+            <br>
+
+            <h3>
+                <b>LJ-050-0128:</b>
+                <i>"Much useful information will come to the attention of local law enforcement agencies in the regular course of their
+                activities."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0128.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0128.wav">
+            </audio>
+            <br>
+            
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0128.wav">
+            </audio>
+            <br>
+            
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0128.wav">
+            </audio>
+            <br>
+            
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0128.wav">
+            </audio>
+            <br>
+            
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0128.wav">
+            </audio>
+            <br>
+            
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0128.wav">
+            </audio>
+            <br>
+
+            <h3>
+                <b>LJ-050-0171:</b>
+                <i>"but it seems to warrant further study before each agency becomes irrevocably committed to separate action."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0171.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0171.wav">
+            </audio>
+            <br>
+            
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0171.wav">
+            </audio>
+            <br>
+            
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0171.wav">
+            </audio>
+            <br>
+            
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0171.wav">
+            </audio>
+            <br>
+            
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0171.wav">
+            </audio>
+            <br>
+            
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0171.wav">
+            </audio>
+            <br>
+
+            <h3>
+                <b>LJ-050-0211:</b>
+                <i>"Chief Rowley testified that the present workload of each Secret Service agent averages one hundred ten point one cases."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0211.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0211.wav">
+            </audio>
+            <br>
+            
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0211.wav">
+            </audio>
+            <br>
+            
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0211.wav">
+            </audio>
+            <br>
+            
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0211.wav">
+            </audio>
+            <br>
+            
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0211.wav">
+            </audio>
+            <br>
+            
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0211.wav">
+            </audio>
+            <br>
+
+            <h3>
+                <b>LJ-050-0217:</b>
+                <i>"The Secret Service sought funds for twenty-five new positions, primarily in field offices. This increase has been
+                approved by the Congress."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0217.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0217.wav">
+            </audio>
+            <br>
+            
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0217.wav">
+            </audio>
+            <br>
+            
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0217.wav">
+            </audio>
+            <br>
+            
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0217.wav">
+            </audio>
+            <br>
+            
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0217.wav">
+            </audio>
+            <br>
+            
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0217.wav">
+            </audio>
+            <br>
+
+            <h3>
+                <b>LJ-050-0235:</b>
+                <i>"It has also used other Federal law enforcement agents during Presidential visits to cities in which such agents are
+                stationed."</i>
+            </h3>
+            REF
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/copysynth/LJ050-0235.wav">
+            </audio>
+            <br>
+
+            clean-100
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_100clean/LJ050-0235.wav">
+            </audio>
+            <br>
+            
+            clean-50
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean/LJ050-0235.wav">
+            </audio>
+            <br>
+            
+            ADD
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50add5words/LJ050-0235.wav">
+            </audio>
+            <br>
+            
+            ASR
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50asr34.8wer/LJ050-0235.wav">
+            </audio>
+            <br>
+            
+            DEL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50del5words/LJ050-0235.wav">
+            </audio>
+            <br>
+            
+            REPL
+            <br>
+            <audio controls>
+                <source src="IS19-robustness-audio-samples/g_50clean_50sub5words/LJ050-0235.wav">
+            </audio>
+            <br>
+
+    </body>
+
+
+</html>
