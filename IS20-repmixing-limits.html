@@ -1,15 +1,13 @@
 <html>
 
 <body>
-    <h2 style="font-family:Baskerville;">Testing the Limits of Representation Mixing for Pronunciation Correction in End-to-End Speech Synthesis</h2>
+    <h1 style="font-family:Baskerville;">Testing the Limits of Representation Mixing for Pronunciation Correction in End-to-End Speech Synthesis</h1>
 
     <p style="font-family:Baskerville;"> by Jason Fong, Jason Taylor, Simon King</p>
 
-    <br>
+    <h2 style="font-family:Baskerville;">'In-LJ' Test Set:</h2>
 
-    <h3 style="font-family:Baskerville;">Test Set 1:</h3>
-
-
+    <p style="font-family:Baskerville;">Words that occur in LJ Speech but were never phonemicised during training, and are mispronounced by the baseline grapheme-only model: despite being in the training data, they are surprisingly still mispronounced when represented as graphemes. This set investigates which models offer effective phone correction for this category of unexpected mispronunciations.</p>
 
 
     <table>
@@ -399,8 +397,9 @@
     </table>
     <br>
 
-    <h3 style="font-family:Baskerville;">Test Set 2:</h3>
+    <h2 style="font-family:Baskerville;">'Out-LJ' Test Set:</h2>
 
+    <p style="font-family:Baskerville;">Words that do not occur in LJ Speech, and are mispronounced by the baseline grapheme-only model. These represent the key challenge of generalising to words without spoken examples.</p>
 
     <table>
         <tr>
@@ -789,7 +788,277 @@
     </table>
     <br>
 
+    <h2 style="font-family:Baskerville;">Use of syllable information & mixing graphemes and phones: (Section 6.3.2)</h2>
 
+    <table>
+        <tr>
+            <td colspan="7">
+                <h3 style="font-family:Baskerville;">Correcting intersyllabic boundaries:</h3>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">plothole</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">grapheme</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/Now we will say plothole again._grapheme_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{p l aa t h ou lw}</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/85_Now we will say {p l oo t h ou lw} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{p l aa t h ou lw}</th>
+            <th style="font-family:Baskerville;">{p l aa t | h ou lw}</th>
+            <th style="font-family:Baskerville;">plo{t | h}ole</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">syllable</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/85_Now we will say {p l oo t h ou lw} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/85_Now we will say {p l aa t | h ou lw} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say plo{t | h}ole again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+    <table>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">goatherd</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">grapheme</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/Now we will say goatherd again._grapheme_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{g ou t h @@r r d}</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/73_Now we will say {g ou t h @@r r d} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{g ou t h @@r r d}</th>
+            <th style="font-family:Baskerville;">{g ou t | h @@r r d}</th>
+            <th style="font-family:Baskerville;">goa{t | h}erd</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">syllable</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/73_Now we will say {g ou t h @@r r d} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {g ou t | h @@r r d} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/3_Now we will say goa{t | h}erd again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+    <table>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">loophole</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">grapheme</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/Now we will say loophole again._grapheme_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{l uu p h ou lw}</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/77_Now we will say {l uu p h ou lw} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{l uu p h ou lw}</th>
+            <th style="font-family:Baskerville;">{l uu p | h ou lw}</th>
+            <th style="font-family:Baskerville;">loo{p | h}ole</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">syllable</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/77_Now we will say {l uu p h ou lw} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/5_Now we will say {l uu p | h ou lw} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/6_Now we will say loo{p | h}ole again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+    <table>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">upheld</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">grapheme</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/Now we will say upheld again._grapheme_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{uh p h e lw d}</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/97_Now we will say {uh p h e lw d} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{uh p h e lw d}</th>
+            <th style="font-family:Baskerville;">{uh p | h e lw d}</th>
+            <th style="font-family:Baskerville;">u{p | h}eld</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">syllable</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/97_Now we will say {uh p h e lw d} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/8_Now we will say {uh p | h e lw d} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/9_Now we will say u{p | h}eld again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+
+
+        <table>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">plughole</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">grapheme</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/Now we will say plughole again._grapheme_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{p l uh g h ou lw}</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/86_Now we will say {p l uh g h ou lw} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{p l uh g h ou lw}</th>
+            <th style="font-family:Baskerville;">{p l uh g | h ou lw}</th>
+            <th style="font-family:Baskerville;">plu{g | h}ole</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">syllable</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/17_Now we will say {p l uh g h ou lw} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/86_Now we will say {p l uh g | h ou lw} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/18_Now we will say plu{g | h}ole again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+
+    <table>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">coathanger</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">grapheme</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/Now we will say coathanger again._grapheme_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{k ou t h a ng @r r}</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/65_Now we will say {k ou t h a ng @r r} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{k ou t h a ng @r r}</th>
+            <th style="font-family:Baskerville;">{k ou t | h a ng | @r r}</th>
+            <th style="font-family:Baskerville;">coa{t | h}anger</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">syllable</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/65_Now we will say {k ou t h a ng @r r} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/65_Now we will say {k ou t | h a ng | @r r} again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/12_Now we will say coa{t | h}anger again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">Note: 'hanger' is mispronounced</th>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h3 style="font-family:Baskerville;">Correcting consonants:</h3>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">{d}at</th>
+            <th style="font-family:Baskerville;">{g}at</th>
+            <th style="font-family:Baskerville;">{jh}at</th>
+            <th style="font-family:Baskerville;">{th}at</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">syllable</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/11_Now we will say {d}at again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/18_Now we will say {g}at again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/24_Now we will say {jh}at again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/47_Now we will say {th}at again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        </table>
+    <br><br>
+        <table>
+        <tr>
+            <td colspan="7">
+                <h3 style="font-family:Baskerville;">Correcting vowels:</h3>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">c{uh}t</th>
+            <th style="font-family:Baskerville;">c{ow}t</th>
+            <th style="font-family:Baskerville;">c{oi}t</th>
+            <th style="font-family:Baskerville;">c{i}t</th>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">syllable</th>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/49_Now we will say c{uh}t again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/39_Now we will say c{ow}t again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/34_Now we will say c{oi}t again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/21_Now we will say c{i}t again._syllable_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;"></th>
+            <th style="font-family:Baskerville;">Note: 'c' is pronounced as /s/</th>
+        </tr>
+    </table>
 
 
 
