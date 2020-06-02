@@ -1,13 +1,799 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>IS20-repmixing-limits Audio Samples</title>
-    </head>
+<html>
 
-    <body>
-    testing testing 123
-    </body>
+<body>
+    <h2 style="font-family:Baskerville;">Testing the Limits of Representation Mixing for Pronunciation Correction in End-to-End Speech Synthesis</h2>
 
+    <p style="font-family:Baskerville;"> by Jason Fong, Jason Taylor, Simon King</p>
+
+    <br>
+
+    <h3 style="font-family:Baskerville;">Test Set 1:</h3>
+
+
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {a n @r r k i s t} again. (anarchist)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/2_Now we will say {a n @r r k i s t} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {d ei b r ii} again. (debris)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/15_Now we will say {d ei b r ii} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {e s p r ii} again. (esprit)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/22_Now we will say {e s p r ii} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {g l uh v} again. (glove)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/26_Now we will say {g l uh v} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {g ai d l ai n z} again. (guidelines)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/28_Now we will say {g ai d l ai n z} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+    <h3 style="font-family:Baskerville;">Test Set 2:</h3>
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {p @ jh aa m @} again. (pyjama)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/84_Now we will say {p @ jh aa m @} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {k w aer r} again. (choir)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/62_Now we will say {k w aer r} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+    
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {r e t^ ai} again. (redeye)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/88_Now we will say {r e t^ ai} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {aa p t @ m ai z @r r z} again. (optimisers)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/82_Now we will say {aa p t @ m ai z @r r z} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+
+
+
+    <table>
+        <tr>
+            <td colspan="7">
+                <h4 style="font-family:Baskerville;">Now we will say {w ai t^ @ w ei k} again. (wideawake)</h4>
+            </td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">full-13049</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._freq_13049_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">rand-500</th>
+            <th style="font-family:Baskerville;">rand-2000</th>
+            <th style="font-family:Baskerville;">rand-4000</th>
+            <th style="font-family:Baskerville;">rand-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._rand_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._rand_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._rand_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._rand_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">freq-500</th>
+            <th style="font-family:Baskerville;">freq-2000</th>
+            <th style="font-family:Baskerville;">freq-4000</th>
+            <th style="font-family:Baskerville;">freq-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._freq_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._freq_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._freq_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._freq_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">bigram-500</th>
+            <th style="font-family:Baskerville;">bigram-2000</th>
+            <th style="font-family:Baskerville;">bigram-4000</th>
+            <th style="font-family:Baskerville;">bigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._bigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._bigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._bigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._bigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">trigram-500</th>
+            <th style="font-family:Baskerville;">trigram-2000</th>
+            <th style="font-family:Baskerville;">trigram-4000</th>
+            <th style="font-family:Baskerville;">trigram-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._trigram_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._trigram_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._trigram_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._trigram_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th style="font-family:Baskerville;">phone-500</th>
+            <th style="font-family:Baskerville;">phone-2000</th>
+            <th style="font-family:Baskerville;">phone-4000</th>
+            <th style="font-family:Baskerville;">phone-6000</th>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._phone_500_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._phone_2000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._phone_4000_350k.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="IS20-repmixing-limits-audio-samples/99_Now we will say {w ai t^ @ w ei k} again._phone_6000_350k.wav" type="audio/wav" /></audio></td>
+        </tr>
+    </table>
+    <br>
+
+
+
+
+
+
+</body>
 
 </html>
