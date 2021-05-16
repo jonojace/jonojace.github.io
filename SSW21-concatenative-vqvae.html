@@ -1,1 +1,473 @@
 Samples page for Analysing Temporal Sensitivity of VQ-VAE Sub-Phone Codebooks is a WIP
+
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: "Baskerville"; 
+            /* width: 100%; 
+            max-width: 1024px; */
+        }
+        /* table {
+            width: 100%; 
+            max-width: 1024px;
+        } */
+        th {white-space: nowrap;}
+        td {white-space: nowrap; padding:0px 10px;}
+    </style>
+</head>
+
+<body>
+<h1><a href="papers/SSW2021-concatenative-vqvae.pdf">Analysing Temporal Sensitivity of VQ-VAE Sub-Phone Codebooks</a></h1>
+
+    <p> by Jason Fong, Jennifer Williams, Simon King</p>
+
+    <p> Under review for Speech Synthesis Workshop 2021</p>
+
+
+    <h2>Abstract</h2>
+
+    <p>In this work we present an analysis of temporal sensitivity of VQ-VAE sub-phone token sequences. Previous work has demonstrated that VQ-VAE systems learn a type of sub-phone representation. However, a detailed examination of the representations themselves is currently lacking. We address this gap by exploring linguistic unit reorganisation. Our experiments show that sub-phone codebook sequences are temporally correlated enough to identify VQ codes that correspond to distinct linguistic units. We found that it is possible to extract VQ codes and re-arrange these linguistic units in a meaningful way (i.e. changing the word-order of a sentence). This work puts us one step closer to understanding how to modify pronunciations at a fine granularity, such as below the phone-level unit.</p>
+
+
+    <h2>Example listening test stimuli</h2>
+    
+    <p>Here we present some stimuli from our listening test grouped by the set that they belong to. The participants were asked to transcribe a target word, which is the one immediately following the concatenation point '&CirclePlus;' (below we <u>underline</u> this word for clarity). The VCTK speaker for each subsequence of words is found in brackets, and target words that are completely unintelligible are coloured in <span style="color:red;">red</span>.</p>
+    
+    <!-- Below is a description of each stimuli set as found in our paper:</p>
+        
+        <ul>
+            <li><b>A</b>: Copy-synthesis</li>
+            <li><b>B</b>: Matched context + Matched Speaker</li>
+            <li><b>C</b>: Matched context + Mismatched Speaker</li>
+            <li><b>D</b>: Mismatched context + Matched Speaker</li>
+            <li><b>E</b>: Mismatched context + Mismatched Speaker</li>
+        </ul> -->
+        
+    <!-- <h3>Intelligible</h3> -->
+
+
+    <table>
+        <tr>
+            <th><b>A</b>: Copy-synthesis</th>
+            <th><b>B</b>: Matched context + Matched Speaker</th>
+            <th><b>C</b>: Matched context + Mismatched Speaker</th>
+            <th><b>D</b>: Mismatched context + Matched Speaker</th>
+            <th><b>E</b>: Mismatched context + Mismatched Speaker</th>
+        </tr>
+
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+
+        <!--  -->
+
+        <tr>
+            <td><i>(p246)</i> red and green &CirclePlus; <u>light</u> when mixed <i>(p246)</i>    </td>
+            <td><i>(p246)</i> red and green &CirclePlus; <u>love</u> with scotland <i>(p246)</i>    </td>
+            <td><i>(p246)</i> red and green &CirclePlus; <u>looking</u> any further <i>(p256)</i>    </td>
+            <td><i>(p246)</i> red and green &CirclePlus; <u>call</u> stella SIL <i>(p246)</i>    </td>
+            <td><i>(p246)</i> red and green &CirclePlus; <u>bring</u> these things <i>(p256)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p246===copysynth===1===p246_023-red-and-green>light-when-mixed-p246_023===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p246===matched_context===1===p246_023-red-and-green>love-with-scotland-p246_275===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p256===matched_context===1===p246_023-red-and-green>looking-any-further-p256_180===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p246===mismatched_context===1===p246_023-red-and-green>call-stella-SIL-p246_001===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p256===mismatched_context===1===p246_023-red-and-green>bring-these-things-p256_002===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p256)</i> the rainbow depends &CirclePlus; <u>considerably</u> upon the <i>(p256)</i>    </td>
+            <td><i>(p256)</i> the rainbow depends &CirclePlus; <u>call</u> stella SIL <i>(p256)</i>    </td>
+            <td><i>(p256)</i> the rainbow depends &CirclePlus; <u>coming</u> over at <i>(p345)</i>    </td>
+            <td><i>(p256)</i> the rainbow depends &CirclePlus; <u>bring</u> these things <i>(p256)</i>    </td>
+            <td><i>(p256)</i> the rainbow depends &CirclePlus; <u>fresh</u> snow SIL <i>(p345)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p256===copysynth===1===p256_021-the-rainbow-depends>considerably-upon-the-p256_021===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p256===matched_context===1===p256_021-the-rainbow-depends>call-stella-SIL-p256_001===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p345===matched_context===1===p256_021-the-rainbow-depends>coming-over-at-p345_288===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p256===mismatched_context===1===p256_021-the-rainbow-depends>bring-these-things-p256_002===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p345===mismatched_context===1===p256_021-the-rainbow-depends>fresh-snow-SIL-p345_003===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p345)</i> the sunlight strikes &CirclePlus; <u>raindrops</u> in the <i>(p345)</i>    </td>
+            <td><i>(p345)</i> the sunlight strikes &CirclePlus; <u>red</u> and green <i>(p345)</i>    </td>
+            <td><i>(p345)</i> the sunlight strikes &CirclePlus; <u>recent</u> assault in <i>(p374)</i>    </td>
+            <td><i>(p345)</i> the sunlight strikes &CirclePlus; <span style="color:red;"><u>call</u></span> stella SIL <i>(p345)</i>    </td>
+            <td><i>(p345)</i> the sunlight strikes &CirclePlus; <u>puzzling</u> and disturbing <i>(p374)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p345===copysynth===1===p345_006-the-sunlight-strikes>raindrops-in-the-p345_006===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p345===matched_context===1===p345_006-the-sunlight-strikes>red-and-green-p345_023===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p374===matched_context===1===p345_006-the-sunlight-strikes>recent-assault-in-p374_319===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p345===mismatched_context===1===p345_006-the-sunlight-strikes>call-stella-SIL-p345_001===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p374===mismatched_context===1===p345_006-the-sunlight-strikes>puzzling-and-disturbing-p374_052===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p374)</i> things into three &CirclePlus; <u>red</u> bags and <i>(p374)</i>    </td>
+            <td><i>(p374)</i> things into three &CirclePlus; <u>rainbow</u> observed is <i>(p374)</i>    </td>
+            <td><i>(p374)</i> things into three &CirclePlus; <u>really</u> suffered for <i>(p246)</i>    </td>
+            <td><i>(p374)</i> things into three &CirclePlus; <u>call</u> stella SIL <i>(p374)</i>    </td>
+            <td><i>(p374)</i> things into three &CirclePlus; <u>bring</u> these things <i>(p246)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p374===copysynth===1===p374_005-things-into-three>red-bags-and-p374_005===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p374===matched_context===1===p374_005-things-into-three>rainbow-observed-is-p374_022===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p246===matched_context===1===p374_005-things-into-three>really-suffered-for-p246_120===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p374===mismatched_context===1===p374_005-things-into-three>call-stella-SIL-p374_001===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p246===mismatched_context===1===p374_005-things-into-three>bring-these-things-p246_002===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p246)</i> a long term &CirclePlus; <u>solution</u> to tackle <i>(p246)</i>    </td>
+            <td><i>(p246)</i> a long term &CirclePlus; <u>seekers</u> was negative <i>(p246)</i>    </td>
+            <td><i>(p246)</i> a long term &CirclePlus; <u>side</u> didn't stand <i>(p256)</i>    </td>
+            <td><i>(p246)</i> a long term &CirclePlus; <u>things</u> with her <i>(p246)</i>    </td>
+            <td><i>(p246)</i> a long term &CirclePlus; <u>drug</u> dealer SIL <i>(p256)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p246===copysynth===2===p246_033-a-long-term>solution-to-tackle-p246_033===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p246===matched_context===2===p246_033-a-long-term>seekers-was-negative-p246_141===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p256===matched_context===2===p246_033-a-long-term>side-didn't-stand-p256_147===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p246===mismatched_context===2===p246_033-a-long-term>things-with-her-p246_002===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p256===mismatched_context===2===p246_033-a-long-term>drug-dealer-SIL-p256_051===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p256)</i> rainbow depends considerably &CirclePlus; <u>upon</u> the size <i>(p256)</i>    </td>
+            <td><i>(p256)</i> rainbow depends considerably &CirclePlus; <u>utmost</u> concern to <i>(p256)</i>    </td>
+            <td><i>(p256)</i> rainbow depends considerably &CirclePlus; <u>amazing</u> arrogance of <i>(p345)</i>    </td>
+            <td><i>(p256)</i> rainbow depends considerably &CirclePlus; <span style="color:red;"><u>things</u></span> with her <i>(p256)</i>    </td>
+            <td><i>(p256)</i> rainbow depends considerably &CirclePlus; <u>thick</u> slabs of <i>(p345)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p256===copysynth===2===p256_021-rainbow-depends-considerably>upon-the-size-p256_021===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p256===matched_context===2===p256_021-rainbow-depends-considerably>utmost-concern-to-p256_084===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p345===matched_context===2===p256_021-rainbow-depends-considerably>amazing-arrogance-of-p345_150===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p256===mismatched_context===2===p256_021-rainbow-depends-considerably>things-with-her-p256_002===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p345===mismatched_context===2===p256_021-rainbow-depends-considerably>thick-slabs-of-p345_003===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p345)</i> two ends apparently &CirclePlus; <u>beyond</u> the horizon <i>(p345)</i>    </td>
+            <td><i>(p345)</i> two ends apparently &CirclePlus; <u>beautiful</u> city SIL <i>(p345)</i>    </td>
+            <td><i>(p345)</i> two ends apparently &CirclePlus; <u>broken</u> but they <i>(p374)</i>    </td>
+            <td><i>(p345)</i> two ends apparently &CirclePlus; <u>things</u> with her <i>(p345)</i>    </td>
+            <td><i>(p345)</i> two ends apparently &CirclePlus; <u>fresh</u> snow peas <i>(p374)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p345===copysynth===2===p345_008-two-ends-apparently>beyond-the-horizon-p345_008===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p345===matched_context===2===p345_008-two-ends-apparently>beautiful-city-SIL-p345_322===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p374===matched_context===2===p345_008-two-ends-apparently>broken-but-they-p374_083===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p345===mismatched_context===2===p345_008-two-ends-apparently>things-with-her-p345_002===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p374===mismatched_context===2===p345_008-two-ends-apparently>fresh-snow-peas-p374_003===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p374)</i> two ends apparently &CirclePlus; <u>beyond</u> the horizon <i>(p374)</i>    </td>
+            <td><i>(p374)</i> two ends apparently &CirclePlus; <u>beautiful</u> colors SIL <i>(p374)</i>    </td>
+            <td><i>(p374)</i> two ends apparently &CirclePlus; <u>blair</u> said as <i>(p246)</i>    </td>
+            <td><i>(p374)</i> two ends apparently &CirclePlus; <u>puzzling</u> and disturbing <i>(p374)</i>    </td>
+            <td><i>(p374)</i> two ends apparently &CirclePlus; <u>things</u> with her <i>(p246)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p374===copysynth===2===p374_008-two-ends-apparently>beyond-the-horizon-p374_008===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p374===matched_context===2===p374_008-two-ends-apparently>beautiful-colors-SIL-p374_007===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p246===matched_context===2===p374_008-two-ends-apparently>blair-said-as-p246_088===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p374===mismatched_context===2===p374_008-two-ends-apparently>puzzling-and-disturbing-p374_052===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p246===mismatched_context===2===p374_008-two-ends-apparently>things-with-her-p246_002===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p246)</i> the scottish consumer &CirclePlus; <u>council</u> yesterday offered <i>(p246)</i>    </td>
+            <td><i>(p246)</i> the scottish consumer &CirclePlus; <u>currently</u> consulting with <i>(p246)</i>    </td>
+            <td><i>(p246)</i> the scottish consumer &CirclePlus; <u>culpable</u> homicide SIL <i>(p256)</i>    </td>
+            <td><i>(p246)</i> the scottish consumer &CirclePlus; <u>play</u> was first <i>(p246)</i>    </td>
+            <td><i>(p246)</i> the scottish consumer &CirclePlus; <u>fresh</u> snow peas <i>(p256)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p246===copysynth===3===p246_098-the-scottish-consumer>council-yesterday-offered-p246_098===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p246===matched_context===3===p246_098-the-scottish-consumer>currently-consulting-with-p246_132===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p256===matched_context===3===p246_098-the-scottish-consumer>culpable-homicide-SIL-p256_032===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p246===mismatched_context===3===p246_098-the-scottish-consumer>play-was-first-p246_051===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p246_p256===mismatched_context===3===p246_098-the-scottish-consumer>fresh-snow-peas-p256_003===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p256)</i> red and green &CirclePlus; <u>light</u> when mixed <i>(p256)</i>    </td>
+            <td><i>(p256)</i> red and green &CirclePlus; <u>looking</u> any further <i>(p256)</i>    </td>
+            <td><i>(p256)</i> red and green &CirclePlus; <u>look</u> good SIL <i>(p345)</i>    </td>
+            <td><i>(p256)</i> red and green &CirclePlus; <u>drug</u> dealer SIL <i>(p256)</i>    </td>
+            <td><i>(p256)</i> red and green &CirclePlus; <u>blue</u> cheese and <i>(p345)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p256===copysynth===3===p256_023-red-and-green>light-when-mixed-p256_023===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p256===matched_context===3===p256_023-red-and-green>looking-any-further-p256_180===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p345===matched_context===3===p256_023-red-and-green>look-good-SIL-p345_264===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p256===mismatched_context===3===p256_023-red-and-green>drug-dealer-SIL-p256_051===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p256_p345===mismatched_context===3===p256_023-red-and-green>blue-cheese-and-p345_003===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p345)</i> parents will never &CirclePlus; <u>see</u> her again <i>(p345)</i>    </td>
+            <td><i>(p345)</i> parents will never &CirclePlus; <u>something</u> beyond his <i>(p345)</i>    </td>
+            <td><i>(p345)</i> parents will never &CirclePlus; <u>seen</u> them before <i>(p374)</i>    </td>
+            <td><i>(p345)</i> parents will never &CirclePlus; <u>bring</u> these things <i>(p345)</i>    </td>
+            <td><i>(p345)</i> parents will never &CirclePlus; <u>thick</u> slabs of <i>(p374)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p345===copysynth===3===p345_076-parents-will-never>see-her-again-p345_076===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p345===matched_context===3===p345_076-parents-will-never>something-beyond-his-p345_011===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p374===matched_context===3===p345_076-parents-will-never>seen-them-before-p374_162===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p345===mismatched_context===3===p345_076-parents-will-never>bring-these-things-p345_002===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p345_p374===mismatched_context===3===p345_076-parents-will-never>thick-slabs-of-p374_003===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+            
+        
+        <tr>
+            <td><i>(p374)</i> hard working seven &CirclePlus; <u>days</u> a week <i>(p374)</i>    </td>
+            <td><i>(p374)</i> hard working seven &CirclePlus; <u>different</u> reports from <i>(p374)</i>    </td>
+            <td><i>(p374)</i> hard working seven &CirclePlus; <u>downing</u> street can <i>(p246)</i>    </td>
+            <td><i>(p374)</i> hard working seven &CirclePlus; <u>fresh</u> snow peas <i>(p374)</i>    </td>
+            <td><i>(p374)</i> hard working seven &CirclePlus; <u>play</u> was first <i>(p246)</i>    </td>
+        </tr>
+        <tr>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p374===copysynth===3===p374_073-hard-working-seven>days-a-week-p374_073===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p374===matched_context===3===p374_073-hard-working-seven>different-reports-from-p374_305===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p246===matched_context===3===p374_073-hard-working-seven>downing-street-can-p246_138===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p374===mismatched_context===3===p374_073-hard-working-seven>fresh-snow-peas-p374_003===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+            <td><audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples/p374_p246===mismatched_context===3===p374_073-hard-working-seven>play-was-first-p246_051===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio></td>
+        </tr>
+        <tr>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+            <th><br></th>
+        </tr>
+
+        <!--  -->
+        
+    </table>
+
+    <!-- <h3>Un-intelligible due to mismatched context</h3>
+    <h3>Un-intelligible due to mismatched speaker</h3> -->
+
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+    <!-- ########################################################################################################################## -->
+
+
+    <h2>Correct initial phone but incorrect rest of word (Section 7)</h2>
+
+    <p>Upon further analysis of the transcription errors made by participants we found in some instances that the first phone of the target word was pronounced correctly, but the rest of the word was mistranscribed often. We present below example stimuli of this observation, and include common errors made by the participants.</p>
+
+    <br>
+    <p><i>(p246)</i> a long term &CirclePlus; <span style="color:red;"><u>seekers</u></span> was negative <i>(p246)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/13===p246_p246===matched_context===2===p246_033-a-long-term>seekers-was-negative-p246_141===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>sequence</li>
+        <li>secrets</li>
+    </ul>
+
+    <br>
+    <p><i>(p246)</i> at its annual &CirclePlus; <span style="color:red;"><u>come</u></span> after the <i>(p256)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/39===p246_p256===matched_context===8===p246_274-at-its-annual>come-after-the-p256_093===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>cull</li>
+        <li>call</li>
+        <li>comb</li>
+    </ul>
+
+    <br>
+    <p><i>(p246)</i> he has already &CirclePlus; <span style="color:red;"><u>cheese</u></span> and maybe <i>(p256)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/47===p246_p256===mismatched_context===6===p246_258-he-has-already>cheese-and-maybe-p256_003===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>choose</li>
+    </ul>
+
+    <br>    
+    <p><i>(p256)</i> rainbow depends considerably &CirclePlus; <span style="color:red;"><u>utmost</u></span> concern to <i>(p256)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/63===p256_p256===matched_context===2===p256_021-rainbow-depends-considerably>utmost-concern-to-p256_084===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>upmost</li>
+    </ul>
+
+    <br>    
+    <p><i>(p256)</i> home side didn't &CirclePlus; <span style="color:red;"><u>strikes</u></span> raindrops in <i>(p256)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/66===p256_p256===matched_context===5===p256_147-home-side-didn't>strikes-raindrops-in-p256_006===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>stripes</li>
+    </ul>
+
+    <br>    
+    <p><i>(p256)</i> does that put &CirclePlus; <span style="color:red;"><u>period</u></span> was a <i>(p256)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/67===p256_p256===matched_context===6===p256_170-does-that-put>period-was-a-p256_046===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>peerage</li>
+        <li>porridge</li>
+    </ul>
+
+    <br>    
+    <p><i>(p256)</i> the rainbow depends &CirclePlus; <span style="color:red;"><u>fresh</u></span> snow SIL <i>(p345)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/92===p256_p345===mismatched_context===1===p256_021-the-rainbow-depends>fresh-snow-SIL-p345_003===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>first</li>
+        <li>for</li>
+    </ul>
+
+    <br>    
+    <p><i>(p345)</i> two ends apparently &CirclePlus; <span style="color:red;"><u>beyond</u></span> the horizon <i>(p345)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/103===p345_p345===copysynth===2===p345_008-two-ends-apparently>beyond-the-horizon-p345_008===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>blur</li>
+        <li>behind</li>
+    </ul>
+
+    <br>    
+    <p><i>(p345)</i> we would certainly &CirclePlus; <span style="color:red;"><u>plastic</u></span> snake and <i>(p374)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/148===p345_p374===mismatched_context===7===p345_045-we-would-certainly>plastic-snake-and-p374_004===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>planning</li>
+        <li>platting</li>
+        <li>plant</li>
+    </ul>
+
+    <br>    
+    <p><i>(p374)</i> two ends apparently &CirclePlus; <span style="color:red;"><u>puzzling</u></span> and disturbing <i>(p374)</i></p>
+    <audio controls="controls"><source src="SSW21-vqvae-swapping-audio-samples-prepended/193===p374_p374===mismatched_context===2===p374_008-two-ends-apparently>puzzling-and-disturbing-p374_052===with-edge-words===with-50-edge-sil_tokens===no-mid-sil-tokens.wav" type="audio/wav" /></audio>
+    <p>Common errors:</p>
+    <ul>
+        <li>prosnate</li>
+        <li>pressing</li>
+        <li>presently</li>
+    </ul>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+
+</body>
+
+</html>
