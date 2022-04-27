@@ -5,19 +5,33 @@
 </head>
 <body>
 
-<h1 style="font-family:Baskerville;"><a href="papers/IS2022_Speech_Audio_Corrector.pdf">Speech Audio Corrector: using speech from non-target speakers for one-off correction of mispronunciations in grapheme-input text-to-speech</a></h1>
+<h1><a href="papers/IS2022_Speech_Audio_Corrector.pdf">Speech Audio Corrector: using speech from non-target speakers for one-off correction of mispronunciations in grapheme-input text-to-speech</a></h1>
 
-    <p style="font-family:Baskerville;"> by Jason Fong, Daniel Lyth, Gustav Eje Henter, Hao Tang, Simon King</p>
+    <p> by Jason Fong, Daniel Lyth, Gustav Eje Henter, Hao Tang, Simon King</p>
 
-    <p style="font-family:Baskerville;"> Under review for Interspeech 2022</p>
+    <p> Under review for Interspeech 2022</p>
 
-    <h2 style="font-family:Baskerville;">Abstract:</h2>
+    <h2>Abstract:</h2>
 
-    <p style="font-family:Baskerville;">Correct pronunciation is essential for text-to-speech (TTS) systems in production. Most production systems rely on pronouncing dictionaries to perform grapheme-to-phoneme conversion. Unlike end-to-end TTS, this enables pronunciation correction by manually altering the phoneme sequence, but the necessary dictionaries are labour-intensive to create and only exist in a few high-resourced languages. This work demonstrates that accurate TTS pronunciation control can be achieved <em>without</em> a dictionary. Moreover, we show that such control can be performed without requiring any model retraining or fine-tuning, merely by supplying a single correctly-pronounced reading of a word in a different voice and accent at synthesis time. Experimental results show that our proposed system successfully enables one-off correction of mispronunciations in grapheme-based TTS with maintained synthesis quality. This opens the door to production-level TTS in languages and applications where pronunciation dictionaries are unavailable.</p>
+    <p>Correct pronunciation is essential for text-to-speech (TTS) systems in production. Most production systems rely on pronouncing dictionaries to perform grapheme-to-phoneme conversion. Unlike end-to-end TTS, this enables pronunciation correction by manually altering the phoneme sequence, but the necessary dictionaries are labour-intensive to create and only exist in a few high-resourced languages. This work demonstrates that accurate TTS pronunciation control can be achieved <em>without</em> a dictionary. Moreover, we show that such control can be performed without requiring any model retraining or fine-tuning, merely by supplying a single correctly-pronounced reading of a word in a different voice and accent at synthesis time. Experimental results show that our proposed system successfully enables one-off correction of mispronunciations in grapheme-based TTS with maintained synthesis quality. This opens the door to production-level TTS in languages and applications where pronunciation dictionaries are unavailable.</p>
 
-    <h2 style="font-family:Baskerville;">Listening Test Samples:</h2>
+    <h2>Listening Test Samples:</h2>
 
-<!--    <p style="font-family:Baskerville;">Words that occur in LJ Speech but were never phonemicised during training, and are mispronounced by the baseline grapheme-only model: despite being in the training data, they are surprisingly still mispronounced when represented as graphemes. This set investigates which models offer effective phone correction for this category of unexpected mispronunciations.</p>-->
+    <p>
+        We generated 78 target words placed in the carrier sentence <em>"How is ... pronounced?"</em> from each of the following 4 conditions:
+    </p>
+        <ul>
+            <li><b>TTS<sub>G</sub>:</b> Transformer TTS using grapheme inputs for the target word</li>
+            <li><b>SAC<sub>G</sub>:</b> SAC using grapheme inputs for the target word</li>
+            <li><b>SAC<sub>US</sub>:</b> SAC using US female speech code inputs for the target word</li>
+            <li><b>SAC<sub>Scot</sub>:</b> SAC using Scottish female speech code inputs for the target word</li>
+        </ul>
+    <p>
+        Each of the 78 target words are not in the training set of LJ Speech, are mispronounced by <b>SAC<sub>G</sub></b>, and are spoken by at least one US and one Scottish female non-target speaker in VCTK.
+    </p>
+    <p>
+        For both <b>SAC<sub>US</sub></b> and <b>SAC<sub>Scot</sub></b> we additionally provide the original VCTK source audio files and utterance IDs from which the speech codes for each target word is retrieved from.
+    </p>
 
 
 <table class="styled-table">

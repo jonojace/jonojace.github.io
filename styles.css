@@ -40,3 +40,15 @@ audio {
     /*height: 200px;*/
     width: 100px;
 }
+
+p, h1, h2, h3, ul, td, tr, th {
+    font-family:Baskerville;
+}
+
+th {
+    font-size: 18px;
+}
+
+p, ul, td {
+    font-size: 18px;
+}
